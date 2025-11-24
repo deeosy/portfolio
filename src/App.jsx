@@ -12,7 +12,6 @@ import github from "./icons/github.svg"
 import linkedIn from "./icons/linkedin.svg"
 import resume from "./icons/download_resume.svg"
 import ConfirmModal from './components/ConfirmModal';
-import resumePDF from '../public/Derrode-Cheale-Resume.pdf'
 
 
 

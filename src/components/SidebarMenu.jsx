@@ -44,7 +44,7 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
     <>
       {/* Menu Button */}
       <button 
-        className="menu-button fixed top-4 md:top-8 right-4 md:right-8 z-50 w-12 h-12 rounded-full border border-white/20 bg-white/10  backdrop-blur-sm flex flex-col items-center justify-center gap-1 cursor-pointer transition-all hover:bg-white/20 "
+        className="menu-button fixed top-4 md:top-8 right-4 md:right-8 z-50 w-12 h-12 rounded-full border border-white/20 bg-white/20  backdrop-blur-sm flex flex-col items-center justify-center gap-1 cursor-pointer transition-all hover:animate-pulse "
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className={`block w-5 h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
