@@ -31,7 +31,7 @@ export default function HomeSection({goToProjects, goToContact}) {
         </button>
         <button 
           onClick={goToContact}
-          className="px-4 py-2 sm:px-8 sm:py-4 border border-white/20 bg-white/10 text-xs sm:text-md rounded-full font-semibold hover:bg-white hover:text-gray-600 transition cursor-pointer">
+          className="px-4 py-2 sm:px-8 sm:py-4 border border-white/20 bg-white/20 text-xs sm:text-md rounded-full font-semibold hover:animate-pulse  transition cursor-pointer">
           Hire Me
         </button>
       </div>
