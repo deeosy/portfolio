@@ -53,52 +53,55 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
       </button>
       
       {/* Sidebar */}
-      <div 
-        className={`sidebar fixed top-0 right-0 h-full w-64 bg-white/20 bg-opacity-80 backdrop-blur-md z-40 transform transition-all duration-300 ease-in-out shadow-2xl ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
-      >
-        <div className="p-8 pt-24 pb-12 md:pb-8 flex flex-col h-full w-full overflow-y-auto">
-          <h3 className="text-xl font-bold mb-8 text-white uppercase tracking-widest">Menu</h3>
-          <div className="flex flex-col flex-1 justify-between">
-            <nav className="flex flex-col gap-4">
-              {sections.map((section, idx) => (
-                <button
-                  key={section}
-                  onClick={() => handleNavigate(idx)}
-                  className={`text-left py-2 px-4 rounded transition-all capitalize text-lg cursor-pointer ${
-                    currentIndex === idx 
-                      ? 'text-white  bg-white/20' 
-                      : 'text-gray-400 hover:text-gray-400'
-                  }`}
-                >
-                  {section}
-                </button>
-              ))}
-            </nav>
-            <div className="">
-              <div className="flex justify-around mb-2" >
-                <a href="https://github.com/deeosy" target='blank'>
-                  <div className="">
-                    <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
-                  </div>
-                </a>
-                <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
-                  <div className="">
-                    <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
-                  </div>
-                </a>
-                <a href="https://x.com/i_Cheale?t=HN8jF1jqaRTxu45sm7zJUA&s=09" target='blank'>
-                  <div className="">
-                    <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition ' />
-                  </div>
-                </a>
-              </div>
-              <span className='text-xs md:text-sm text-white '>
-                © {currentYear} Derrode Walter Cheale
-              </span>
+      <div className={ isOpen ? `fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-30` : "" }>
+        <div 
+          className={`sidebar fixed top-0 right-0 h-full w-64 bg-white/20 bg-opacity-80 backdrop-blur-md z-40 transform transition-all duration-300 ease-in-out shadow-2xl ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          <div className="p-8 pt-24 pb-12 md:pb-8 flex flex-col h-full w-full overflow-y-auto">
+            <h3 className="text-xl font-bold mb-8 text-white uppercase tracking-widest">Menu</h3>
+            <div className="flex flex-col flex-1 justify-between">
+              <nav className="flex flex-col gap-4">
+                {sections.map((section, idx) => (
+                  <button
+                    key={section}
+                    onClick={() => handleNavigate(idx)}
+                    className={`text-left py-2 px-4 rounded transition-all capitalize text-lg cursor-pointer ${
+                      currentIndex === idx 
+                        ? 'text-white  bg-white/20' 
+                        : 'text-gray-400 hover:text-gray-400'
+                    }`}
+                  >
+                    {section}
+                  </button>
+                ))}
+              </nav>
+              <div className="">
+                <div className="flex justify-around mb-2" >
+                  <a href="https://github.com/deeosy" target='blank'>
+                    <div className="">
+                      <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
+                    </div>
+                  </a>
+                  <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
+                    <div className="">
+                      <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
+                    </div>
+                  </a>
+                  <a href="https://x.com/i_Cheale?t=HN8jF1jqaRTxu45sm7zJUA&s=09" target='blank'>
+                    <div className="">
+                      <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition ' />
+                    </div>
+                  </a>
+                </div>
+                <span className='text-xs md:text-sm text-white '>
+                  © {currentYear} Derrode Walter Cheale
+                </span>
 
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </>
   )

@@ -22,7 +22,7 @@ export default function GlassProjectCard({p}) {
         <p className="text-white/60 text-sm md:text-[16px] mb-2 trancate line-clamp-2">{p.desc}</p>
         <div className="flex flex-wrap gap-2 mb-6">
           {p.tech.map(t => (
-            <span key={t} className="px-3 py-1 text-white/60 border border-white/20 rounded-full text-xs backdrop-blur">
+            <span key={t} className="px-3 py-1 text-white border border-white/20 rounded-full text-xs backdrop-blur">
               {t}
             </span>
           ))}
