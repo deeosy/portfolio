@@ -44,7 +44,7 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
     <>
       {/* Menu Button */}
       <button 
-        className="menu-button fixed top-4 md:top-8 right-4 md:right-8 z-50 w-12 h-12 rounded-full border border-white/20 bg-white/20 bg-opacity-10 backdrop-blur-sm flex flex-col items-center justify-center gap-1 cursor-pointer transition-all hover:bg-opacity-20"
+        className="menu-button fixed top-4 md:top-8 right-4 md:right-8 z-50 w-12 h-12 rounded-full border border-white/20 bg-white/10  backdrop-blur-sm flex flex-col items-center justify-center gap-1 cursor-pointer transition-all hover:bg-white/20 "
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className={`block w-5 h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
@@ -78,17 +78,17 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
               <div className="flex justify-around mb-2" >
                 <a href="https://github.com/deeosy" target='blank'>
                   <div className="">
-                    <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 rounded-md ' />
+                    <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 rounded-md hover:bg-white/10 transition' />
                   </div>
                 </a>
                 <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
                   <div className="">
-                    <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 rounded-md' />
+                    <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 rounded-md hover:bg-white/10 transition' />
                   </div>
                 </a>
                 <a href="https://x.com/i_Cheale?t=HN8jF1jqaRTxu45sm7zJUA&s=09" target='blank'>
                   <div className="">
-                    <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 rounded-md ' />
+                    <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 rounded-md hover:bg-white/10 transition ' />
                   </div>
                 </a>
               </div>

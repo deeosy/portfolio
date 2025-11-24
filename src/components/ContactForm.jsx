@@ -44,9 +44,15 @@ export default function ContactForm() {
       <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 text-center">Get in Touch</h2>
       
       {submitted ? (
-        <div className="bg-green-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-lg text-center">
-          <h3 className="text-2xl font-bold mb-2">Thank you!</h3>
-          <p className="text-lg">Your message has been sent successfully. We'll get back to you soon.</p>
+        // <div className="bg-green-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-lg text-center">
+        //   <h3 className="text-2xl font-bold mb-2">Thank you!</h3>
+        //   <p className="text-lg">Your message has been sent successfully. We'll get back to you soon.</p>
+        // </div>
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[999]">
+          <div className="bg-white/10 border border-white/20 rounded-xl p-6 w-[90%] max-w-md backdrop-blur-lg shadow-2xl">
+            <h3 className="text-2xl font-bold mb-4">Thank you!</h3>
+            <p className="text-lg">Your message has been sent successfully. We'll get back to you soon.</p>
+          </div>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -134,21 +140,25 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-4 px-6 rounded-lg font-medium text-white transition-all ${
+              className={`w-full rounded-lg font-medium text-white transition-all ${
                 isSubmitting 
-                  ? 'bg-purple-800 cursor-not-allowed opacity-70' 
-                  : 'bg-purple-700 hover:bg-purple-600 transform hover:translate-y-1'
+                  ? 'bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 animate-pulse cursor-not-allowed opacity-70' 
+                  : 'bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 transform animate-pulse cursor-pointer hover:-translate-y-1'
               }`}
             >
               {isSubmitting ? (
-                <span className="flex items-center justify-center">
+                <div className="flex items-center justify-center border border-white/20 bg-white/40 w-full py-4 px-6 rounded-lg">
                   <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
                   Sending...
-                </span>
-              ) : 'Send Message'}
+                </div>
+              ) : (
+                <div className='border border-white/20 bg-white/40 w-full py-4 px-6 rounded-lg'>
+                  Send Message
+                </div>
+              )}
             </button>
           </div>
         </form>

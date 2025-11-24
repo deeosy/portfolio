@@ -7,11 +7,21 @@ import HomeSection from './components/HomeSection'
 import AboutSection from './components/AboutSection'
 import ProjectsSection from './components/ProjectsSection'
 import ContactForm from './components/ContactForm';
+import twitter from "./icons/twitter.svg"
+import github from "./icons/github.svg"
+import linkedIn from "./icons/linkedin.svg"
+import resume from "./icons/download_resume.svg"
+import ConfirmModal from './components/ConfirmModal';
+import resumePDF from '../public/Derrode-Cheale-Resume.pdf'
+
+
 
 const HorizontalScrollApp = () => {
   const containerRef = useRef(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
+  const [showDelayedDiv, setShowDelayedDiv] = useState(false);
+  const [showResumeModal, setShowResumeModal] = useState(false);
   const sections = ['home', 'about', 'projects', 'contact']
   const backgrounds = [
     'bg-gradient-to-br from-blue-900 via-sky-900 to-purple-900',
@@ -110,6 +120,24 @@ const HorizontalScrollApp = () => {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [sections.length, isAnimating])
 
+  useEffect(() => {
+    if(currentIndex === 3) {
+      const timeout = setTimeout(() => setShowDelayedDiv(true), 400);
+      return () => clearTimeout(timeout)
+    } else {
+      setShowDelayedDiv(false)
+    }
+  }, [currentIndex])
+
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/Derrode-Cheale-Resume.pdf" // resume link here
+    link.download = "Derrode-Cheale-Resume.pdf"
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   const handlePrevBtn = () => !isAnimating && setCurrentIndex((prev) => (prev - 1 + sections.length) % sections.length)
 
   const handleNextBtn = () => !isAnimating && setCurrentIndex((prev) => (prev + 1) % sections.length)
@@ -122,6 +150,27 @@ const HorizontalScrollApp = () => {
         {/* Section counter */}
         <div className=" fixed top-4 md:top-8 left-4 md:left-8 text-5xl font-bold">
           0{currentIndex + 1}
+
+          <div className={`${showDelayedDiv ? "flex flex-col gap-y-3 sm:gap-y-10 left-0" : "-left-999 "} absolute  mt-20  h-80 transform transition-all duration-1000 ease-in-out `}>
+            <a href="https://github.com/deeosy" target='blank'>
+              <div className="">
+                <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:bg-white/10 transition' />
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
+              <div className="">
+                <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:bg-white/10 transition' />
+              </div>
+            </a>
+            <a href="https://x.com/i_Cheale?t=HN8jF1jqaRTxu45sm7zJUA&s=09" target='blank'>
+              <div className="">
+                <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:bg-white/10 transition' />
+              </div>
+            </a>
+            <div onClick={() => setShowResumeModal(true)} className='cursor-pointer'>
+              <img src={resume} alt="Download Resume" className='border border-white/20 p-1 h-8 w-8 md:h-12 md:w-12 rounded-md hover:bg-white/10 transition ' />
+            </div>
+          </div>
         </div>
         
         {/* Sidebar Menu */}
@@ -155,6 +204,14 @@ const HorizontalScrollApp = () => {
           <NavButtons isAnimating={isAnimating} handleNextBtn={handleNextBtn} handlePrevBtn={handlePrevBtn} />
         </div>
       </div>
+
+      {/* Resume Download Modal */}
+      <ConfirmModal isOpen={showResumeModal} onClose={() => setShowResumeModal(false)} 
+        onConfirm={() => {
+          downloadResume();
+          setShowResumeModal(false)
+        }} 
+      />
     </div>
   )
 }
