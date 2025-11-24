@@ -16,14 +16,12 @@ const HorizontalScrollApp = () => {
   const backgrounds = [
     'bg-gradient-to-br from-blue-900 via-sky-900 to-purple-900',
     'bg-gradient-to-br from-sky-900 via-purple-800 to-pink-800',
-    'bg-gradient-to-br from-pink-700 via-rose-800 to-red-800',
-    'bg-gradient-to-br from-red-700 via-rose-900 to-gray-800',
-    // 'bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900', was going to use this for the skill section but i am thinking i will just create the component and add it to the about section
-
+    'bg-gradient-to-br from-pink-800 via-purple-800 to-sky-900',
+    'bg-gradient-to-br from-sky-900 via-purple-900 to-blue-800',
   ]
 
   const sectionComponents = [
-    <HomeSection />,
+    <HomeSection goToProjects={()=> setCurrentIndex(2)} goToContact={() => setCurrentIndex(3)} />,
     <AboutSection />,
     <ProjectsSection />,
     <ContactForm />

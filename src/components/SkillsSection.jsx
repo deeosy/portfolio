@@ -6,7 +6,7 @@ export default function SkillsSection() {
   return (
     <div className='flex flex-wrap sm:justify-center gap-2 mx-auto'>
       {skills.map(skill => (
-        <div key={skill} className="px-4 py-2 bg-gray-800 bg-opacity-50 backdrop-blur rounded-full text-sm font-medium border border-gray-800 hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer ">
+        <div key={skill} className="px-3 py-1 bg-white/10  rounded-full text-sm font-medium border border-white/20 hover:border-white hover:scale-110 transition-all duration-300 cursor-pointer ">
           {skill}
         </div>
       ))}

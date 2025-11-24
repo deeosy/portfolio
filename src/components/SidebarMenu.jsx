@@ -40,7 +40,7 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
     <>
       {/* Menu Button */}
       <button 
-        className="menu-button fixed top-4 md:top-8 right-4 md:right-8 z-50 w-12 h-12 rounded-full bg-gray-400 bg-opacity-10 backdrop-blur-sm flex flex-col items-center justify-center gap-1 cursor-pointer transition-all hover:bg-opacity-20"
+        className="menu-button fixed top-4 md:top-8 right-4 md:right-8 z-50 w-12 h-12 rounded-full bg-white/20 bg-opacity-10 backdrop-blur-sm flex flex-col items-center justify-center gap-1 cursor-pointer transition-all hover:bg-opacity-20"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className={`block w-5 h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
@@ -50,19 +50,19 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
       
       {/* Sidebar */}
       <div 
-        className={`sidebar fixed top-0 right-0 h-full w-64 bg-slate-600 bg-opacity-80 backdrop-blur-md z-40 transform transition-all duration-300 ease-in-out shadow-2xl ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`sidebar fixed top-0 right-0 h-full w-64 bg-white/20 bg-opacity-80 backdrop-blur-md z-40 transform transition-all duration-300 ease-in-out shadow-2xl ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        <div className="p-8 pt-24 flex flex-col h-full w-full">
+        <div className="p-8 pt-24 pb-18 md:pb-8 flex flex-col h-full w-full overflow-y-auto">
           <h3 className="text-xl font-bold mb-8 text-white uppercase tracking-widest">Menu</h3>
-          <div className="flex flex-col h-full w-full justify-between">
+          <div className="flex flex-col flex-1 justify-between">
             <nav className="flex flex-col gap-4">
               {sections.map((section, idx) => (
                 <button
                   key={section}
                   onClick={() => handleNavigate(idx)}
-                  className={`text-left py-2 px-4 rounded transition-all capitalize text-lg ${
+                  className={`text-left py-2 px-4 rounded transition-all capitalize text-lg cursor-pointer ${
                     currentIndex === idx 
-                      ? 'text-white  bg-gray-400 bg-opacity-10' 
+                      ? 'text-white  bg-white/20' 
                       : 'text-gray-400 hover:text-gray-400'
                   }`}
                 >
@@ -70,10 +70,10 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
                 </button>
               ))}
             </nav>
-            <span className='text-sm text-white hidden md:block'>
+
+            <span className='text-xs md:text-sm text-white '>
               © {currentYear} Derrode Walter Cheale
             </span>
-
           </div>
         </div>
       </div>
