@@ -44,6 +44,13 @@ const projects = [
     live: "https://lpm-system.netlify.app/",
     code: "https://github.com/deeosy/ReSpark-Lead-Manager-API"
   },
+    {
+    title: "Keeper - Note Keeping App",
+    desc: "A note pad app for keeping notes with a edit and delete feature. ",
+    tech: ["React", "Zustand", "Tailwind", ],
+    live: "https://lively-brigadeiros-f4649e.netlify.app/",
+    code: "https://github.com/deeosy/Note_Keeper_App"
+  },
 
 ]
 

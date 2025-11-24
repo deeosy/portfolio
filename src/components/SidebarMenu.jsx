@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import twitter from "../icons/twitter.svg"
+import github from "../icons/github.svg"
+import linkedIn from "../icons/linkedin.svg"
+
 
 export default function SidebarMenu({ sections, currentIndex, setCurrentIndex }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -70,10 +74,29 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
                 </button>
               ))}
             </nav>
+            <div className="">
+              <div className="flex justify-around mb-2" >
+                <a href="https://github.com/deeosy" target='blank'>
+                  <div className="">
+                    <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 rounded-md ' />
+                  </div>
+                </a>
+                <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
+                  <div className="">
+                    <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 rounded-md' />
+                  </div>
+                </a>
+                <a href="https://x.com/i_Cheale?t=HN8jF1jqaRTxu45sm7zJUA&s=09" target='blank'>
+                  <div className="">
+                    <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 rounded-md ' />
+                  </div>
+                </a>
+              </div>
+              <span className='text-xs md:text-sm text-white '>
+                © {currentYear} Derrode Walter Cheale
+              </span>
 
-            <span className='text-xs md:text-sm text-white '>
-              © {currentYear} Derrode Walter Cheale
-            </span>
+            </div>
           </div>
         </div>
       </div>
