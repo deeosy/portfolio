@@ -17,7 +17,7 @@ const HorizontalScrollApp = () => {
     'bg-gradient-to-br from-blue-900 via-sky-900 to-purple-900',
     'bg-gradient-to-br from-sky-900 via-purple-800 to-pink-800',
     'bg-gradient-to-br from-pink-800 via-purple-800 to-sky-900',
-    'bg-gradient-to-br from-sky-900 via-purple-900 to-blue-800',
+    'bg-gradient-to-br from-purple-900 via-sky-900 to-blue-800',
   ]
 
   const sectionComponents = [
