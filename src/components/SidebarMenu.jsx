@@ -68,7 +68,7 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
                     className={`text-left py-2 px-4 rounded transition-all capitalize text-lg cursor-pointer ${
                       currentIndex === idx 
                         ? 'text-white  bg-white/20' 
-                        : 'text-white/30 hover:text-white'
+                        : 'text-white '
                     }`}
                   >
                     {section}
