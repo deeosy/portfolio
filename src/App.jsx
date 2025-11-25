@@ -150,7 +150,7 @@ const HorizontalScrollApp = () => {
         <div className=" fixed top-4 md:top-8 left-4 md:left-8 text-5xl font-bold">
           0{currentIndex + 1}
 
-          <div className={`${showDelayedDiv ? "flex flex-col gap-y-3 sm:gap-y-10 left-0" : "-left-999 "} absolute  mt-20  h-80 transform transition-all duration-1000 ease-in-out `}>
+          <div className={`${showDelayedDiv ? "flex flex-col gap-y-4 sm:gap-y-10 left-0" : "-left-999 "} absolute  mt-20  h-80 transform transition-all duration-1000 ease-in-out `}>
             <a href="https://github.com/deeosy" target='blank'>
               <div className="">
                 <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition' />
