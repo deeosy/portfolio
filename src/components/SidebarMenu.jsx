@@ -53,11 +53,11 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
       </button>
       
       {/* Sidebar */}
-      <div className={ isOpen ? `fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-30` : "" }>
+      <div className={ isOpen ? `fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-30` : "" }>
         <div 
           className={`sidebar fixed top-0 right-0 h-full w-64 bg-white/20 bg-opacity-80 backdrop-blur-md z-40 transform transition-all duration-300 ease-in-out shadow-2xl ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
-          <div className="p-8 pt-24 pb-12 md:pb-8 flex flex-col h-full w-full overflow-y-auto">
+          <div className="p-8 pt-24  flex flex-col h-full w-full overflow-y-auto">
             <h3 className="text-xl font-bold mb-8 text-white uppercase tracking-widest">Menu</h3>
             <div className="flex flex-col flex-1 justify-between">
               <nav className="flex flex-col gap-4">
@@ -93,7 +93,7 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
                     </div>
                   </a>
                 </div>
-                <span className='text-xs md:text-sm text-white '>
+                <span className='text-xs md:text-sm text-white text-center'>
                   © {currentYear} Derrode Walter Cheale
                 </span>
 

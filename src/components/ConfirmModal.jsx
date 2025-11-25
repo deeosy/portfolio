@@ -5,7 +5,7 @@ export default function ConfirmModal({isOpen, onClose, onConfirm}) {
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[999]">
-      <div className="bg-white/10 border border-white/20 rounded-xl p-6 w-[90%] max-w-md backdrop-blur-lg shadow-2xl">
+      <div className="bg-white/20 border border-white/30 rounded-xl p-6 w-[90%] max-w-md backdrop-blur-lg shadow-2xl">
         <h2 className="text-2xl font-semibold mb-4 text-white">
           Download Resume?
         </h2>
