@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import twitter from "../icons/twitter.svg"
 import github from "../icons/github.svg"
 import linkedIn from "../icons/linkedin.svg"
+import Tooltip from '@mui/material/Tooltip'
 
 
 export default function SidebarMenu({ sections, currentIndex, setCurrentIndex }) {
@@ -43,14 +44,17 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
   return (
     <>
       {/* Menu Button */}
-      <button 
-        className="menu-button fixed top-4 md:top-8 right-4 md:right-8 z-50 w-12 h-12 rounded-full border border-white/20 bg-white/20  backdrop-blur-sm flex flex-col items-center justify-center gap-1 cursor-pointer transition-all hover:animate-pulse "
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className={`block w-5 h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-        <span className={`block w-5 h-0.5 bg-white transition-all ${isOpen ? 'opacity-0' : ''}`}></span>
-        <span className={`block w-5 h-0.5 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-      </button>
+      <Tooltip title={isOpen ? 'Close' : 'Menu'} placement="left" >
+        <button 
+          className="menu-button fixed top-4 md:top-8 right-4 md:right-8 z-50 w-12 h-12 rounded-full border border-white/20 bg-white/20  backdrop-blur-sm flex flex-col items-center justify-center gap-1 cursor-pointer transition-all hover:animate-pulse "
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span className={`block w-5 h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+          <span className={`block w-5 h-0.5 bg-white transition-all ${isOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-5 h-0.5 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+        </button>
+      </Tooltip>
+      
       
       {/* Sidebar */}
       <div className={ isOpen ? `fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-30` : "" }>
@@ -77,21 +81,27 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
               </nav>
               <div className="">
                 <div className="flex justify-around mb-2" >
-                  <a href="https://github.com/deeosy" target='blank'>
-                    <div className="">
-                      <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
-                    </div>
-                  </a>
-                  <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
-                    <div className="">
-                      <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
-                    </div>
-                  </a>
-                  <a href="https://x.com/i_Cheale?t=HN8jF1jqaRTxu45sm7zJUA&s=09" target='blank'>
-                    <div className="">
-                      <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition ' />
-                    </div>
-                  </a>
+                  <Tooltip title='Github' placement="top">
+                    <a href="https://github.com/deeosy" target='blank'>
+                      <div className="">
+                        <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
+                      </div>
+                    </a>
+                  </Tooltip>
+                  <Tooltip title='LinkedIn' placement="top">
+                    <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
+                      <div className="">
+                        <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
+                      </div>
+                    </a>
+                  </Tooltip>
+                  <Tooltip title='Twitter' placement="top">
+                    <a href="https://x.com/i_Cheale?t=HN8jF1jqaRTxu45sm7zJUA&s=09" target='blank'>
+                      <div className="">
+                        <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition ' />
+                      </div>
+                    </a>
+                  </Tooltip>
                 </div>
                 <span className='text-xs md:text-sm text-white text-center'>
                   © {currentYear} Derrode Walter Cheale

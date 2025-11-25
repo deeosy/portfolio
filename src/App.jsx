@@ -12,6 +12,7 @@ import github from "./icons/github.svg"
 import linkedIn from "./icons/linkedin.svg"
 import resume from "./icons/download_resume.svg"
 import ConfirmModal from './components/ConfirmModal';
+import Tooltip from '@mui/material/Tooltip';
 
 
 
@@ -151,24 +152,33 @@ const HorizontalScrollApp = () => {
           0{currentIndex + 1}
 
           <div className={`${showDelayedDiv ? "flex flex-col gap-y-4 sm:gap-y-10 left-0" : "-left-999 "} absolute  mt-20  h-80 transform transition-all duration-1000 ease-in-out `}>
-            <a href="https://github.com/deeosy" target='blank'>
-              <div className="">
-                <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition' />
+            <Tooltip title='Github' placement="right">
+              <a href="https://github.com/deeosy" target='blank'>
+                <div className="">
+                  <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition' />
+                </div>
+              </a>
+            </Tooltip>
+            <Tooltip title='LinkedIn' placement="right">
+              <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
+                <div className="">
+                  <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition' />
+                </div>
+              </a>
+            </Tooltip>
+            <Tooltip title='Twitter' placement="right">
+              <a href="https://x.com/i_Cheale?t=HN8jF1jqaRTxu45sm7zJUA&s=09" target='blank'>
+                <div className="">
+                  <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition' />
+                </div>
+              </a>
+            </Tooltip>
+            <Tooltip title='Download Resume' placement="right">
+              <div onClick={() => setShowResumeModal(true)} className='cursor-pointer'>
+                <img src={resume} alt="Download Resume" className='border border-white/20 p-1 h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition ' />
               </div>
-            </a>
-            <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
-              <div className="">
-                <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition' />
-              </div>
-            </a>
-            <a href="https://x.com/i_Cheale?t=HN8jF1jqaRTxu45sm7zJUA&s=09" target='blank'>
-              <div className="">
-                <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition' />
-              </div>
-            </a>
-            <div onClick={() => setShowResumeModal(true)} className='cursor-pointer'>
-              <img src={resume} alt="Download Resume" className='border border-white/20 p-1 h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition ' />
-            </div>
+            </Tooltip>
+            
           </div>
         </div>
         
