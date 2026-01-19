@@ -1,0 +1,61 @@
+const projects = [
+    {
+    title: "LuxeStay Haven - Luxury Hotel Bookings",
+    desc: "Discover luxurious stays worldwide with LuxeStayHaven",
+    tech: ["React", "JavaScript", "TypeScript", "Supabase", "Tailwind", "Zustand"],
+    live: "https://luxestayhaven.com/",
+    code: "https://github.com/deeosy/LuxeStay_FInal_Local"
+  },
+  {
+    title: "KANI Album Launch Web App",
+    desc: "Interactive Map covering the journey of KoJo-Cue (Ghanaian Rap Artist).",
+    tech: ["React", "JavaScript", "Firebase", "Tailwind", "Zustand"],
+    live: "https://ghanamantimes.com/",
+    code: "https://github.com/deeosy/KANI-KOJO-CUE-PROJECT"
+  },
+  {
+    title: "RentEasy-GH",
+    desc: "A rental online platform, with user authentication.",
+    tech: ["React", "Express.js", "MongoDB", "Tailwind", "Zustand", "FireStore", "Render"],
+    live: "https://renteasy-gh.netlify.app/",
+    code: "https://github.com/deeosy/RentEasy"
+  },
+    {
+    title: "Style-Sync Web App",
+    desc: "A digital outfit organizer with AI recommendation.",
+    tech: ["React", "FireStore", "Firebase.js", "OpenAI", "Zustand"],
+    live: "https://stylesynce-outfit-oganizer.netlify.app/",
+    code: "https://github.com/deeosy/StyleSync_an-outfit-organizer"
+  },
+    {
+    title: "CheckBox - ToDo Web App",
+    desc: "A ToDo List App with user authentication, filtered task options and a hosted Backend.",
+    tech: ["React", "Express.js", "MongoDB", "Zustand", "Render"],
+    live: "https://enchanting-kheer-ef03f2.netlify.app/",
+    code: "https://github.com/deeosy/Check-Box-todolist-app"
+  },
+    {
+    title: "Lead Manager Web App Feature",
+    desc: "Custom restful API for Quovoy to create and retrieve leads from their users. ",
+    tech: ["React", "Express.js", "MongoDB", "Zustand", "Render"],
+    live: "https://elegant-trifle-92ec82.netlify.app/",
+    code: "https://github.com/deeosy/ReSpark-Lead-Manager-API"
+  },
+    {
+    title: "Live Presenter Mention System",
+    desc: "Create and Submit your LPMs, track their approvals, and get notified in real-time. ",
+    tech: ["React", "Express.js", "Zustand", "Tailwind", ],
+    live: "https://lpm-system.netlify.app/",
+    code: "https://github.com/deeosy/ReSpark-Lead-Manager-API"
+  },
+    {
+    title: "Keeper - Note Keeping App",
+    desc: "A note pad app for keeping notes with a edit and delete feature. ",
+    tech: ["React", "Zustand", "Tailwind", ],
+    live: "https://lively-brigadeiros-f4649e.netlify.app/",
+    code: "https://github.com/deeosy/Note_Keeper_App"
+  },
+
+]
+
+export default projects

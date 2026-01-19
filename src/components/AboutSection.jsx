@@ -17,7 +17,7 @@ export default function AboutSection() {
             <li>Based in Accra, Ghana</li>
             <li>Available for freelance</li>
             <li>Love minimal design</li>
-            <li>1+ years React experience</li>
+            <li>2+ years React experience</li>
           </ul>
         </div>
       </div>
