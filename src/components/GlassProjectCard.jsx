@@ -1,3 +1,5 @@
+import { trackEvent } from '../utils/analytics';
+
 export default function GlassProjectCard({p}) {
   return (
     <div className="">
@@ -28,8 +30,22 @@ export default function GlassProjectCard({p}) {
           ))}
         </div>
         <div className="flex gap-4">
-          <a href={p.live} target="_blank" className=" hover:text-white/60 cursor-pointer">Live Demo →</a>
-          <a href={p.code} target="_blank" className="text-white/60 hover:text-white cursor-pointer">Source Code</a>
+          <a 
+            href={p.live} 
+            target="_blank" 
+            className=" hover:text-white/60 cursor-pointer"
+            onClick={() => trackEvent('Project', 'Live Demo Click', p.title)}
+          >
+            Live Demo →
+          </a>
+          <a 
+            href={p.code} 
+            target="_blank" 
+            className="text-white/60 hover:text-white cursor-pointer"
+            onClick={() => trackEvent('Project', 'Source Code Click', p.title)}
+          >
+            Source Code
+          </a>
         </div>
 
         {/* tiny icon top-right like the example */}

@@ -34,6 +34,9 @@ export default function ContactForm() {
       dataToSend,
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     ).then(() => {
+      // Track form submission event
+      trackEvent('Contact', 'Form Submission', `${formData.title} || Portfolio Contact Form`);
+      
       setIsSubmitting(false)
       setSubmitted(true)
       
@@ -50,9 +53,6 @@ export default function ContactForm() {
             message: ''
           })
         }, 3000)
-
-        // Track form submission event
-        trackEvent('Contact', 'Form Submission', `${formData.title} || Portfolio Contact Form`);
     }).catch((error) => {
       console.error("EmailJS Error:", error);
       setIsSubmitting(false);

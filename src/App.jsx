@@ -168,14 +168,22 @@ const HorizontalScrollApp = () => {
 
           <div className={`${showDelayedDiv ? "flex flex-col gap-y-4 sm:gap-y-10 left-0" : "-left-999 "} absolute  mt-20  h-80 transform transition-all duration-1000 ease-in-out `}>
             <Tooltip title='Github' placement="right">
-              <a href="https://github.com/deeosy" target='blank'>
+              <a 
+                href="https://github.com/deeosy" 
+                target='blank' 
+                onClick={() => trackEvent('Social', 'Github Click', 'Github Profile')}
+              >
                 <div className="">
                   <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition' />
                 </div>
               </a>
             </Tooltip>
             <Tooltip title='LinkedIn' placement="right">
-              <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
+              <a 
+                href="https://www.linkedin.com/in/derrode-cheale-a45709345/" 
+                target='blank' 
+                onClick={() => trackEvent('Social', 'LinkedIn Click', 'LinkedIn Profile')}
+              >
                 <div className="">
                   <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 md:h-12 md:w-12 rounded-md hover:animate-pulse bg-white/10 transition' />
                 </div>

@@ -82,14 +82,22 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
               <div className="">
                 <div className="flex justify-around mb-2" >
                   <Tooltip title='Github' placement="top">
-                    <a href="https://github.com/deeosy" target='blank'>
+                    <a 
+                      href="https://github.com/deeosy" 
+                      target='blank' 
+                      onClick={() => trackEvent('Social', 'Github Click', 'Github Profile')}
+                    >
                       <div className="">
                         <img src={github} alt="Github Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
                       </div>
                     </a>
                   </Tooltip>
                   <Tooltip title='LinkedIn' placement="top">
-                    <a href="https://www.linkedin.com/in/derrode-cheale-96795852/" target='blank' >
+                    <a 
+                      href="https://www.linkedin.com/in/derrode-cheale-a45709345/" 
+                      target='blank' 
+                      onClick={() => trackEvent('Social', 'LinkedIn Click', 'LinkedIn Profile')}
+                    >
                       <div className="">
                         <img src={linkedIn} alt="Linked In Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition' />
                       </div>
