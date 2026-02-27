@@ -16,7 +16,7 @@ export default function HomeSection({goToProjects, goToContact}) {
         Hi, I am Derrode
       </h1>
       <p className='text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-light mb-8 text-white'>
-        Full-Stack Developer & UI/UX Enthusiast
+        Full-Stack Web Developer | React | JavaScript | Node.js
       </p>
       <p className="text-md sm:text-xl max-w-2xl mx-auto text-white/60">
         I build beautiful, fast, and meaningful digital experiences.
