@@ -81,6 +81,12 @@ const HorizontalScrollApp = () => {
   // Handle section change
   useEffect(() => {
     scrollToSection(currentIndex)
+
+    const pageName = sections[currentIndex];
+
+    // Track page view on section change
+    trackPage(`/${pageName}`);
+
   }, [currentIndex])
   
   // Handle mouse wheel to scroll horizontally in a loop
