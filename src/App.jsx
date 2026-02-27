@@ -1,5 +1,6 @@
 import './App.css'
 import React, { useEffect, useRef, useState } from 'react';
+import { initGA, trackPage, trackEvent } from './utils/analytics';
 import ProgressBar from './components/ProgressBar';
 import NavButtons from './components/NavButtons';
 import SidebarMenu from './components/SidebarMenu';
@@ -13,7 +14,6 @@ import linkedIn from "./icons/linkedin.svg"
 import resume from "./icons/download_resume.svg"
 import ConfirmModal from './components/ConfirmModal';
 import Tooltip from '@mui/material/Tooltip';
-
 
 
 const HorizontalScrollApp = () => {
@@ -71,6 +71,12 @@ const HorizontalScrollApp = () => {
       }, 800)
     }
   }
+
+  // Track page view on initial load
+  useEffect(() => {
+    initGA();
+    trackPage(window.location.pathname);
+  }, []);
   
   // Handle section change
   useEffect(() => {
@@ -130,6 +136,9 @@ const HorizontalScrollApp = () => {
   }, [currentIndex])
 
   const downloadResume = () => {
+    // Track download event
+    trackEvent('Portfolio', 'Download Resume', 'Resume PDF');
+
     const link = document.createElement("a");
     link.href = "/Derrode-Cheale-Resume.pdf" // resume link here
     link.download = "Derrode-Cheale-Resume.pdf"

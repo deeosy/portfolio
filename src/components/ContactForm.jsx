@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { trackEvent } from '../utils/analytics';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -49,6 +50,9 @@ export default function ContactForm() {
             message: ''
           })
         }, 3000)
+
+        // Track form submission event
+        trackEvent('Contact', 'Form Submission', `${formData.title} || Portfolio Contact Form`);
     }).catch((error) => {
       console.error("EmailJS Error:", error);
       setIsSubmitting(false);
