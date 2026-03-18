@@ -1,4 +1,11 @@
 const projects = [
+  {
+    title: "WebCrawler AI Chatbot",
+    desc: "Chatbot (a RAG-powered website indexing assistant)",
+    tech: ["React", "JavaScript", "Python", "Tailwind", "Vite", "FastAPI"],
+    live: "https://webcrawleraichatbot.netlify.app/",
+    code: "https://github.com/deeosy/webCrawler_AI_Chatbot"
+  },
     {
     title: "LuxeStay Haven - Luxury Hotel Bookings",
     desc: "Discover luxurious stays worldwide with LuxeStayHaven",

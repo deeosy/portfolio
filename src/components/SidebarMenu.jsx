@@ -3,9 +3,11 @@ import twitter from "../icons/twitter.svg"
 import github from "../icons/github.svg"
 import linkedIn from "../icons/linkedin.svg"
 import Tooltip from '@mui/material/Tooltip'
+import resume from "../icons/download_resume.svg"
 
 
-export default function SidebarMenu({ sections, currentIndex, setCurrentIndex }) {
+
+export default function SidebarMenu({ sections, currentIndex, setCurrentIndex, setShowResumeModal }) {
   const [isOpen, setIsOpen] = useState(false)
 
     // current year for footer
@@ -109,6 +111,11 @@ export default function SidebarMenu({ sections, currentIndex, setCurrentIndex })
                         <img src={twitter} alt="Twitter Link" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition ' />
                       </div>
                     </a>
+                  </Tooltip>
+                  <Tooltip title='Download Resume' placement="top">
+                    <div onClick={() => setShowResumeModal(true)} className='cursor-pointer'>
+                      <img src={resume} alt="Download Resume" className='border border-white/20 p-1  h-8 w-8 rounded-md bg-white/10 hover:animate-pulse transition ' />
+                    </div>
                   </Tooltip>
                 </div>
                 <span className='text-xs md:text-sm text-white text-center'>

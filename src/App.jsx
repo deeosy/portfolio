@@ -210,6 +210,7 @@ const HorizontalScrollApp = () => {
           sections={sections} 
           currentIndex={currentIndex} 
           setCurrentIndex={setCurrentIndex} 
+          setShowResumeModal={setShowResumeModal}
         />
       </div>
       
