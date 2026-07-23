@@ -1,4 +1,12 @@
 const projects = [
+    {
+    title: "Ghana Guide - AI Tourism Bot",
+    desc: "Chatbot (a RAG-powered website touring assistant for Ghana)",
+    tech: ["React", "JavaScript", "Python", "Tailwind", "Vite", "FastAPI"],
+    live: "https://ghana-guide.netlify.app/",
+    code: "https://github.com/deeosy/tourism_chatbot",
+    image: "",
+  },
   {
     title: "WebCrawler AI Chatbot",
     desc: "Chatbot (a RAG-powered website indexing assistant)",
